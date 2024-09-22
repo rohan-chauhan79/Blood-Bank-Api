@@ -41,6 +41,11 @@ app.use("/api/v1/admin", require("./routes/adminRoutes"));
 //port
 const PORT = process.env.PORT || 8080;
 
+//check server
+app.get('/ping',(req,res) =>{
+ res.send('Server is Running');
+});
+
 //listen
 app.listen(PORT,()=>{
  console.log(`Node Server Running In ${process.env.DEV_MODE} On PORT ${process.env.PORT}`
